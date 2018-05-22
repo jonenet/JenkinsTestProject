@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def getDate() {
+static def getDate() {
     def date = new Date()
     def formattedDate = date.format('yyyyMMddHHmm')
     return formattedDate
@@ -60,8 +60,9 @@ android {
                 timeNow = JENKINS_TIME
                 outDirectory = 'D:/developTools/apachetomcat8/webapps/jenkins/apk'
                 newName = 'jone-android-v' +
-                        APP_VERSION + '-' + timeNow + '-' + '.apk'
-                output.outputFileName = new File(outDirectory, newName)
+                        APP_VERSION + '-' + timeNow + '-' + 'release.apk'
+//                output.outputFileName = new File(outDirectory, newName)
+                output.outputFile = new File(outDirectory, newName)
             } else {
                 timeNow = getDate()
                 if (variant.buildType.name.equals('debug')) {
