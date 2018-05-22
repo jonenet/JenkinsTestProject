@@ -58,11 +58,10 @@ android {
 
             if ("true".equals(IS_JENKINS)) {
                 timeNow = JENKINS_TIME
-                outDirectory = 'D:/developTools/apachetomcat8/webapps/jenkins/apk'
+//                outDirectory = 'D:/developTools/apachetomcat8/webapps/jenkins/apk'
                 newName = 'jone-android-v' +
                         APP_VERSION + '-' + timeNow + '-' + 'release.apk'
-//                output.outputFileName = new File(outDirectory, newName)
-                output.outputFile = new File(outDirectory, newName)
+                output.outputFileName = new File(newName)
             } else {
                 timeNow = getDate()
                 if (variant.buildType.name.equals('debug')) {
