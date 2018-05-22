@@ -68,7 +68,7 @@ android {
                     newName = "jone-android-v${APP_VERSION}-debug.apk"
                 } else {
                     newName = 'jone-android-v' +
-                            APP_VERSION + '-' + timeNow + '-' + '.apk'
+                            APP_VERSION + '-' + timeNow + '-' + 'release.apk'
                 }
                 output.outputFileName = new File(newName)
             }
