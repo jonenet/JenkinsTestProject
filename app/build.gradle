@@ -60,7 +60,7 @@ android {
                 timeNow = JENKINS_TIME
 //                outDirectory = 'D:/developTools/apachetomcat8/webapps/jenkins/apk'
                 newName = 'jone-android-v' +
-                        APP_VERSION + '-' + timeNow + '-' + 'release.apk'
+                        APP_VERSION + '-' + timeNow + '-release.apk'
                 output.outputFileName = new File(newName)
             } else {
                 timeNow = getDate()
