@@ -56,19 +56,19 @@ android {
 //            def outDirectory = oldFile.parent
             def outDirectory
 
-            if ("true".equals(IS_JENKINS)) {
-                timeNow = JENKINS_TIME
+            if ("true" == IS_JENKINS) {
+                timeNow = getDate()
 //                outDirectory = 'D:/developTools/apachetomcat8/webapps/jenkins/apk'
                 newName = 'jone-android-v' +
                         APP_VERSION + '-' + timeNow + '-release.apk'
                 output.outputFileName = new File(newName)
             } else {
                 timeNow = getDate()
-                if (variant.buildType.name.equals('debug')) {
+                if (variant.buildType.name == 'debug') {
                     newName = "jone-android-v${APP_VERSION}-debug.apk"
                 } else {
                     newName = 'jone-android-v' +
-                            APP_VERSION + '-' + timeNow + '-' + 'release.apk'
+                            APP_VERSION + '-' + timeNow + '-release.apk'
                 }
                 output.outputFileName = new File(newName)
             }
